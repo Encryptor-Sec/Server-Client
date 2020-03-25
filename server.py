@@ -1,3 +1,13 @@
+logo= '''\033[1;33
+███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗ 
+██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗
+███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝
+╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗
+███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║
+╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝
+                                                 
+'''
+print(logo) 
 import socket
 def server():
     s = socket.socket()
@@ -9,7 +19,7 @@ def server():
         data = conn.recv(1024).decode()
         if not data:
             break
-        print("from client : " + str(data))
+        print("From client : " + str(data))
         data = input('Your Message : ')
         conn.send(data.encode())
     conn.close()
